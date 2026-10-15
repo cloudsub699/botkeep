@@ -36,16 +36,17 @@ function destroySocket(socket) {
 }
 
 const server = http.createServer((req, res) => {
-    const host = req.headers.host || 'localhost';
+    let host = req.headers.host || 'localhost';
+    host = host.split(':')[0];
 
     const vlessLink =
-        `vless://${UUID}@${host}` +
+        `vless://${UUID}@${host}:443` +
         `?encryption=none` +
-        `&security=none` +
+        `&security=tls` +
         `&type=ws` +
         `&host=${host}` +
         `&path=%2F` +
-        `#VLESS-Proxy`;
+        `#VLESS-Zerops`;
 
     res.writeHead(200, {
         'Content-Type': 'text/plain; charset=utf-8',
