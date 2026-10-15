@@ -45,6 +45,7 @@ const server = http.createServer((req, res) => {
         `&security=tls` +
         `&type=ws` +
         `&host=${host}` +
+        `&sni=${host}` +
         `&path=%2F` +
         `#VLESS-Zerops`;
 
