@@ -4,6 +4,10 @@ zerops:
       base: nodejs@24
       buildCommands:
         - npm install
+      deployFiles:
+        - package.json
+        - index.js
+        - node_modules
     run:
       base: nodejs@24
       start: npm start
