@@ -1,9 +1,0 @@
-zerops:
-  - setup: nodejs
-    build:
-      base: nodejs@24
-      buildCommands:
-        - npm install
-    run:
-      base: nodejs@24
-      start: npm start
